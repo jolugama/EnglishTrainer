@@ -1,0 +1,59 @@
+.letrabonita {
+    font-family: miPurisa, "Hand of Sean", "Chiller", "SketchFlow Print", "Viner Hand ITC";
+}
+
+#miBoton{
+    outline: none;
+     border: none;
+}
+
+
+@font-face {
+    font-family: miPurisa;
+    src: url(Purisa.ttf);
+}
+
+/* linea par
+tr.even{
+	background-color: #c4e3f3 !important;
+}*/
+/* linea par ordenada
+ tr.even td.sorting_1{
+        background-color: #9acfea !important;
+}*/
+/* linea inpar ordenada
+ tr.odd td.sorting_1{
+        background-color: #FFF !important;    
+}*/
+
+
+
+ #mitabla tr.even:hover {
+	background-color: #428bca !important;
+        color:#fff;
+}
+ #mitabla tr.odd:hover {
+	background-color: #428bca !important;
+        color:#fff;
+}
+
+
+ #mitabla tr.even:hover td.sorting_1 {
+	background-color: #428bca !important;
+}
+
+
+ #mitabla tr.odd:hover td.sorting_1 {
+	background-color: #428bca !important;
+}
+
+ #mitabla tbody tr.odd:hover, #mitabla tbody tr.odd td.highlighted {
+	background-color: #428bca !important;
+}
+
+
+select{
+    padding: 0 10px !important;
+}
+
+

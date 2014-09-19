@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel=icon href=favicon.png sizes="16x16" type="image/png">
+
+    <!-- css genericas -->
+    <link href="css/micss.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/jquery/jquery.min.js" type="text/javascript"></script>
+
+    <!-- css y js bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <!-- <link href="js/vendor/bootstrap-3.2/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/> -->
+    <script src="js/vendor/bootstrap-3.2/js/bootstrap.js" type="text/javascript"></script>
+
+
+
+    <!-- configInicio carga scripts si son necesarios -->
+    <script src="js/configInicio.js" type="text/javascript"></script>
+    <script src="js/genericas/funciones.js" type="text/javascript"></script>
+    <script src="js/json/jsonFunctions.js" type="text/javascript"></script>
+    <script src="js/websql/websql.js" type="text/javascript"></script>
+    <script src="js/vendor/underscore-min.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+</head>
+<body class="letrabonita">
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="header-container">
+        <header class="wrapper clearfix">
+            <h2 class="title letrabonita">English Trainer</h2>
+        </header>
+    </div>
+
+    <div class="main wrapper clearfix" >
+        <article>
+            <header >  <!-- centra el artículo entero -->
+                <div id="infoCarga">Please, wait while the game loads...<br></div>
+                <form class="form-horizontal" role="form" id="miformulario">
+                    <div class="form-group">
+                        <div class="col-lg-1"> </div>
+                        <label class="col-sm-2 control-label">Mode</label>
+                        <div class="col-sm-10 col-lg-6">
+                            <select class="form-control" id="tipoJuego" style="btn-inverse" onchange="index.accion().estadoSelectTipoJuego()">
+                                <option>Vocabulary</option>
+                                <option>Phrases</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-1"> </div>
+                        <label class="col-sm-2 control-label">Level</label>
+                        <div class="col-sm-10 col-lg-6">
+                            <select class="form-control" id="selectNivel" style="btn-inverse" onchange="index.accion().coloresLista()"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-1"> </div>
+                        <label class="col-sm-2 control-label">List</label>
+                        <div class="col-sm-10 col-lg-6">
+                            <select class="form-control" id="selectLista" style="btn-inverse" onchange="index.accion().cambiaLista()"></select>
+                        </div>
+                    </div><br>
+
+
+
+                    <div class="col-md-6 col-lg-4 center-block" style="float:none;padding-bottom: 5px">
+                        <button type="button"   id="bPlay" class="btn btn-primary btn-lg btn-block " onclick="index.config().botonPlay()">Play!</button>
+                    </div>
+                    <div class="col-md-6 col-lg-4 center-block" style="float:none;padding-bottom: 5px">
+                        <button type="button"   id="bPlayRandom" class="btn btn-primary btn-lg btn-block" onclick="index.config().randomList()">Random Playlist!</button>
+                    </div>
+                    <div class="col-md-6 col-lg-4 center-block" style="float:none;padding-bottom: 5px">
+                        <button type="button"   id="bdatagrids" class="btn btn-primary btn-lg btn-block" onclick="index.config().botondatagrids()">DataGrids</button>
+                    </div>
+                    <div class="col-md-6 col-lg-4 center-block" style="float:none;padding-bottom: 5px">
+                        <button type="button"   id="bStatistics" class="btn btn-primary btn-lg btn-block" onclick="index.config().botonStatistics()">Statistics</button>
+                    </div>
+
+
+                    <br><br>
+                </form>
+
+            </header>
+
+            <footer>
+
+            </footer>
+
+        </article>
+
+        <aside id="lateral">
+            <br><p><b>English Trainer v1.1</b> </p>
+
+            <p>This program has been designed for private use.</p>
+            <p>You can see the great potential of technologies: javascript, html5, css3, jquery, json and bootstrap.</p>
+            <p>Furthermore it's adapted for use on <b>Android</b> phones and Chrome navigator.</p>
+            <p></p>
+            <p><a href="mailto:jolugama8@gmail.com">jolugama8@gmail.com </a></p>
+            <br><p><b>By JoLuGaMa :)</b> </p>
+        </aside>
+
+
+    </div> <!-- #main -->
+
+    <!--  <div class="footer-container">
+        <footer class="wrapper">
+            <h5>Where there’s a will, there’s a way. </h5>
+        </footer>
+    </div> -->
+
+
+
+</body>
+</html>
