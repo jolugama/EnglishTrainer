@@ -1,5 +1,3 @@
-/* line 5, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/responsive-embed.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/responsive-embed\.less}line{font-family:\000035}}
 .embed-responsive {
   position: relative;
   display: block;
@@ -7,8 +5,6 @@
   padding: 0;
   overflow: hidden;
 }
-/* line 12, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/responsive-embed.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/responsive-embed\.less}line{font-family:\0000312}}
 .embed-responsive .embed-responsive-item,
 .embed-responsive iframe,
 .embed-responsive embed,
@@ -21,13 +17,10 @@
   width: 100%;
   border: 0;
 }
-/* line 26, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/responsive-embed.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/responsive-embed\.less}line{font-family:\0000326}}
 .embed-responsive.embed-responsive-16by9 {
   padding-bottom: 56.25%;
 }
-/* line 31, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/responsive-embed.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/responsive-embed\.less}line{font-family:\0000331}}
 .embed-responsive.embed-responsive-4by3 {
   padding-bottom: 75%;
 }
+/*# sourceMappingURL=responsive-embed.css.map */

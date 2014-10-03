@@ -9,7 +9,14 @@ index.voc_ing, index.fra_ing; //localStorage. son strings
 index.voc_ingJSON, index.fra_ingJSON; //recogo la info de localStorage y lo paso a objetos Json
 index.arrayColores = [];
 index.estaCargando = true;
-$(document).ready(function() {
+$(document).ready(function () {
+    //Detectar navegador y avisar si no es chrome
+    var esChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+    if (esChrome) {
+        $('#eschrome').hide();
+    } else {
+         
+    }
 //websql.realiza().query("DROP TABLE IF EXISTS GAME_REG");
     websql.realiza().query("CREATE TABLE IF NOT EXISTS GAME_REG (id_reg INTEGER PRIMARY KEY AUTOINCREMENT,id INTEGER,tipojuego TEXT,idioma TEXT,correcto INTEGER,erroneo INTEGER,mark INTEGER)");
     //websql.realiza().query("DROP TABLE IF EXISTS GAME_VOC_ING");
@@ -21,7 +28,7 @@ $(document).ready(function() {
     $('#miformulario').hide();
 });
 //una vez se carga del todo la página
-$(window).on('load', function() {
+$(window).on('load', function () {
 //CARGA DE DATOS
 //datos de json de vocabulario y frases (si existe se carga de session y si no, se genera session)
     if (localStorage.etVocabularioIngles) {
@@ -49,20 +56,20 @@ $(window).on('load', function() {
  * @returns {index.config.Anonym$0}
  * funciones que se ejecutan una sola vez, al principio o no.
  */
-index.config = function() {
+index.config = function () {
     return{
-        compruebaFelicitaciones: function() {
-            websql.realiza().transaccionAsync("select count(*) as num from GAME_VOC_ING where lista='FELICITACIONES'", function(datos) {
+        compruebaFelicitaciones: function () {
+            websql.realiza().transaccionAsync("select count(*) as num from GAME_VOC_ING where lista='FELICITACIONES'", function (datos) {
 
                 if (datos[0].num === 0) {
                     console.log('se inserta felicitaciones felicitaciones')
-                    index.accion().inserccion(index.voc_ingJSON, '1', 'FELICITACIONES', function() {
+                    index.accion().inserccion(index.voc_ingJSON, '1', 'FELICITACIONES', function () {
                         console.log('felicitaciones insertadas!')
                     });
                 }
             })
         },
-        botonPlay: function() {
+        botonPlay: function () {
             var nivel = document.getElementById("selectNivel").value;
             var lista = document.getElementById("selectLista").value;
             console.log(" Modo:" + localStorage.etTipoJuego + " nivel:" + nivel + " Lista:" + lista);
@@ -74,18 +81,18 @@ index.config = function() {
             } else {
                 arrayJson = index.fra_ingJSON;
             }
-            index.accion().inserccion(arrayJson, nivel, lista, function() {
+            index.accion().inserccion(arrayJson, nivel, lista, function () {
                 window.location.href = 'game.html';
             });
 //tipoJuego "vocabulary" o "phrases"
         },
-        botondatagrids: function() {
+        botondatagrids: function () {
             window.location.href = 'datagrids.html';
         },
-        botonStatistics: function() {
+        botonStatistics: function () {
             window.location.href = 'statistics.html';
         },
-        randomList: function() {
+        randomList: function () {
             var lista = document.getElementById("selectLista");
             var nivel = document.getElementById("selectNivel");
             var modo;
@@ -140,10 +147,10 @@ index.config = function() {
         }
     };
 };
-index.accion = function() {
+index.accion = function () {
     return{
         //segun se cambie la select podrá ser Vocabulary o Phrases
-        estadoSelectTipoJuego: function() {
+        estadoSelectTipoJuego: function () {
             if (!localStorage.etTipoJuego) {
                 document.getElementById('tipoJuego').selectedIndex = 0;
             }
@@ -162,7 +169,7 @@ index.accion = function() {
 
 
         },
-        rellenaSelectNivel: function(tipoJ) {
+        rellenaSelectNivel: function (tipoJ) {
             //meto en un array los niveles
             var miarray = [];
             if (tipoJ === 'Vocabulary') {
@@ -205,7 +212,7 @@ index.accion = function() {
             index.accion().coloresLista();
 
         },
-        borraOptionLista: function(nombreid) {
+        borraOptionLista: function (nombreid) {
             //borro options anteriores y creo los actuales.
             var seleccion = document.getElementById(nombreid);
             while (seleccion.options.length) {
@@ -215,7 +222,7 @@ index.accion = function() {
                 seleccion.remove(0);
             }
         },
-        rellenaSelectLista: function() {
+        rellenaSelectLista: function () {
             var tipoJuego = document.getElementById("tipoJuego").value;
             var selecNivel = document.getElementById("selectNivel").value;
             //meto en un array los niveles
@@ -274,10 +281,10 @@ index.accion = function() {
             }
 
         },
-        cambiaLista: function() {
+        cambiaLista: function () {
             localStorage.etLista = document.getElementById("selectLista").value;
         },
-        coloresLista: function() {
+        coloresLista: function () {
             //guarda el nivel siempre, menos la primera vez que se carga, ya que asi carga la guardada
             if (index.estaCargando !== true) {
                 document.getElementById("selectLista").selectedIndex = 0;
@@ -308,7 +315,7 @@ index.accion = function() {
                         + " where " + tabla + ".NIVEL='" + nivel + "')supertabla "
                         + " group by supertabla.nivel,supertabla.lista)supertabla2";
                 websql.realiza().transaccionAsync(consul,
-                        function(datos) {
+                        function (datos) {
                             //console.log(datos)
                             index.arrayColores = datos;
                             index.accion().rellenaSelectLista();
@@ -318,7 +325,7 @@ index.accion = function() {
             }
         },
         //inserta la lista elegida del tipo de juego y nivel, y se inserta a websql para recoger en pantalla game
-        inserccion: function(c, nivel, lista, callback) {
+        inserccion: function (c, nivel, lista, callback) {
             // c --> coleccionObjetosJson;
             var pregunta, respuesta;
             var arraydeInsercciones = [];

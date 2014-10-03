@@ -1,3 +1,5 @@
+/* line 16, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000316}}
 .btn-default,
 .btn-primary,
 .btn-success,
@@ -8,6 +10,8 @@
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
+/* line 27, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000327}}
 .btn-default:active,
 .btn-primary:active,
 .btn-success:active,
@@ -23,10 +27,14 @@
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
+/* line 62, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000362}}
 .btn:active,
 .btn.active {
   background-image: none;
 }
+/* line 69, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000369}}
 .btn-default {
   background-image: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
   background-image: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
@@ -38,21 +46,29 @@
   text-shadow: 0 1px 0 #fff;
   border-color: #ccc;
 }
+/* line 40, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000340}}
 .btn-default:hover,
 .btn-default:focus {
   background-color: #e0e0e0;
   background-position: 0 -15px;
 }
+/* line 46, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000346}}
 .btn-default:active,
 .btn-default.active {
   background-color: #e0e0e0;
   border-color: #dbdbdb;
 }
+/* line 52, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000352}}
 .btn-default:disabled,
 .btn-default[disabled] {
   background-color: #e0e0e0;
   background-image: none;
 }
+/* line 70, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000370}}
 .btn-primary {
   background-image: -webkit-linear-gradient(top, #428bca 0%, #2d6ca2 100%);
   background-image: -o-linear-gradient(top, #428bca 0%, #2d6ca2 100%);
@@ -62,21 +78,29 @@
   background-repeat: repeat-x;
   border-color: #2b669a;
 }
+/* line 40, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000340}}
 .btn-primary:hover,
 .btn-primary:focus {
   background-color: #2d6ca2;
   background-position: 0 -15px;
 }
+/* line 46, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000346}}
 .btn-primary:active,
 .btn-primary.active {
   background-color: #2d6ca2;
   border-color: #2b669a;
 }
+/* line 52, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000352}}
 .btn-primary:disabled,
 .btn-primary[disabled] {
   background-color: #2d6ca2;
   background-image: none;
 }
+/* line 71, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000371}}
 .btn-success {
   background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
   background-image: -o-linear-gradient(top, #5cb85c 0%, #419641 100%);
@@ -86,21 +110,29 @@
   background-repeat: repeat-x;
   border-color: #3e8f3e;
 }
+/* line 40, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000340}}
 .btn-success:hover,
 .btn-success:focus {
   background-color: #419641;
   background-position: 0 -15px;
 }
+/* line 46, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000346}}
 .btn-success:active,
 .btn-success.active {
   background-color: #419641;
   border-color: #3e8f3e;
 }
+/* line 52, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000352}}
 .btn-success:disabled,
 .btn-success[disabled] {
   background-color: #419641;
   background-image: none;
 }
+/* line 72, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000372}}
 .btn-info {
   background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
   background-image: -o-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
@@ -110,21 +142,29 @@
   background-repeat: repeat-x;
   border-color: #28a4c9;
 }
+/* line 40, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000340}}
 .btn-info:hover,
 .btn-info:focus {
   background-color: #2aabd2;
   background-position: 0 -15px;
 }
+/* line 46, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000346}}
 .btn-info:active,
 .btn-info.active {
   background-color: #2aabd2;
   border-color: #28a4c9;
 }
+/* line 52, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000352}}
 .btn-info:disabled,
 .btn-info[disabled] {
   background-color: #2aabd2;
   background-image: none;
 }
+/* line 73, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000373}}
 .btn-warning {
   background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
   background-image: -o-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
@@ -134,21 +174,29 @@
   background-repeat: repeat-x;
   border-color: #e38d13;
 }
+/* line 40, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000340}}
 .btn-warning:hover,
 .btn-warning:focus {
   background-color: #eb9316;
   background-position: 0 -15px;
 }
+/* line 46, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000346}}
 .btn-warning:active,
 .btn-warning.active {
   background-color: #eb9316;
   border-color: #e38d13;
 }
+/* line 52, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000352}}
 .btn-warning:disabled,
 .btn-warning[disabled] {
   background-color: #eb9316;
   background-image: none;
 }
+/* line 74, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000374}}
 .btn-danger {
   background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
   background-image: -o-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
@@ -158,26 +206,36 @@
   background-repeat: repeat-x;
   border-color: #b92c28;
 }
+/* line 40, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000340}}
 .btn-danger:hover,
 .btn-danger:focus {
   background-color: #c12e2a;
   background-position: 0 -15px;
 }
+/* line 46, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000346}}
 .btn-danger:active,
 .btn-danger.active {
   background-color: #c12e2a;
   border-color: #b92c28;
 }
+/* line 52, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000352}}
 .btn-danger:disabled,
 .btn-danger[disabled] {
   background-color: #c12e2a;
   background-image: none;
 }
+/* line 82, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000382}}
 .thumbnail,
 .img-thumbnail {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
 }
+/* line 93, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000393}}
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
@@ -187,6 +245,8 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
   background-color: #e8e8e8;
 }
+/* line 98, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\0000398}}
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
@@ -197,6 +257,8 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff357ebd', GradientType=0);
   background-color: #357ebd;
 }
+/* line 112, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003112}}
 .navbar-default {
   background-image: -webkit-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
   background-image: -o-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
@@ -208,6 +270,8 @@
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
 }
+/* line 119, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003119}}
 .navbar-default .navbar-nav > .active > a {
   background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f3f3f3 100%);
   background-image: -o-linear-gradient(top, #ebebeb 0%, #f3f3f3 100%);
@@ -217,10 +281,14 @@
   -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
 }
+/* line 124, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003124}}
 .navbar-brand,
 .navbar-nav > li > a {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
 }
+/* line 130, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003130}}
 .navbar-inverse {
   background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222222 100%);
   background-image: -o-linear-gradient(top, #3c3c3c 0%, #222222 100%);
@@ -229,6 +297,8 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
+/* line 134, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003134}}
 .navbar-inverse .navbar-nav > .active > a {
   background-image: -webkit-linear-gradient(top, #222222 0%, #282828 100%);
   background-image: -o-linear-gradient(top, #222222 0%, #282828 100%);
@@ -238,20 +308,28 @@
   -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);
 }
+/* line 139, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003139}}
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-nav > li > a {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
+/* line 146, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003146}}
 .navbar-static-top,
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   border-radius: 0;
 }
+/* line 159, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003159}}
 .alert {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
+/* line 172, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003172}}
 .alert-success {
   background-image: -webkit-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
   background-image: -o-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
@@ -260,6 +338,8 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);
   border-color: #b2dba1;
 }
+/* line 173, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003173}}
 .alert-info {
   background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
   background-image: -o-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
@@ -268,6 +348,8 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);
   border-color: #9acfea;
 }
+/* line 174, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003174}}
 .alert-warning {
   background-image: -webkit-linear-gradient(top, #fcf8e3 0%, #f8efc0 100%);
   background-image: -o-linear-gradient(top, #fcf8e3 0%, #f8efc0 100%);
@@ -276,6 +358,8 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fff8efc0', GradientType=0);
   border-color: #f5e79e;
 }
+/* line 175, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003175}}
 .alert-danger {
   background-image: -webkit-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
   background-image: -o-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
@@ -284,6 +368,8 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffe7c3c3', GradientType=0);
   border-color: #dca7a7;
 }
+/* line 184, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003184}}
 .progress {
   background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);
   background-image: -o-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);
@@ -291,6 +377,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);
 }
+/* line 194, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003194}}
 .progress-bar {
   background-image: -webkit-linear-gradient(top, #428bca 0%, #3071a9 100%);
   background-image: -o-linear-gradient(top, #428bca 0%, #3071a9 100%);
@@ -298,6 +386,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff3071a9', GradientType=0);
 }
+/* line 195, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003195}}
 .progress-bar-success {
   background-image: -webkit-linear-gradient(top, #5cb85c 0%, #449d44 100%);
   background-image: -o-linear-gradient(top, #5cb85c 0%, #449d44 100%);
@@ -305,6 +395,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff449d44', GradientType=0);
 }
+/* line 196, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003196}}
 .progress-bar-info {
   background-image: -webkit-linear-gradient(top, #5bc0de 0%, #31b0d5 100%);
   background-image: -o-linear-gradient(top, #5bc0de 0%, #31b0d5 100%);
@@ -312,6 +404,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff31b0d5', GradientType=0);
 }
+/* line 197, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003197}}
 .progress-bar-warning {
   background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #ec971f 100%);
   background-image: -o-linear-gradient(top, #f0ad4e 0%, #ec971f 100%);
@@ -319,6 +413,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffec971f', GradientType=0);
 }
+/* line 198, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003198}}
 .progress-bar-danger {
   background-image: -webkit-linear-gradient(top, #d9534f 0%, #c9302c 100%);
   background-image: -o-linear-gradient(top, #d9534f 0%, #c9302c 100%);
@@ -326,16 +422,22 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc9302c', GradientType=0);
 }
+/* line 202, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003202}}
 .progress-bar-striped {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+/* line 211, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003211}}
 .list-group {
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
 }
+/* line 215, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003215}}
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
@@ -347,10 +449,14 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff3278b3', GradientType=0);
   border-color: #3278b3;
 }
+/* line 230, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003230}}
 .panel {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
+/* line 240, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003240}}
 .panel-default > .panel-heading {
   background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
   background-image: -o-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
@@ -358,6 +464,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
 }
+/* line 241, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003241}}
 .panel-primary > .panel-heading {
   background-image: -webkit-linear-gradient(top, #428bca 0%, #357ebd 100%);
   background-image: -o-linear-gradient(top, #428bca 0%, #357ebd 100%);
@@ -365,6 +473,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff357ebd', GradientType=0);
 }
+/* line 242, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003242}}
 .panel-success > .panel-heading {
   background-image: -webkit-linear-gradient(top, #dff0d8 0%, #d0e9c6 100%);
   background-image: -o-linear-gradient(top, #dff0d8 0%, #d0e9c6 100%);
@@ -372,6 +482,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffd0e9c6', GradientType=0);
 }
+/* line 243, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003243}}
 .panel-info > .panel-heading {
   background-image: -webkit-linear-gradient(top, #d9edf7 0%, #c4e3f3 100%);
   background-image: -o-linear-gradient(top, #d9edf7 0%, #c4e3f3 100%);
@@ -379,6 +491,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffc4e3f3', GradientType=0);
 }
+/* line 244, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003244}}
 .panel-warning > .panel-heading {
   background-image: -webkit-linear-gradient(top, #fcf8e3 0%, #faf2cc 100%);
   background-image: -o-linear-gradient(top, #fcf8e3 0%, #faf2cc 100%);
@@ -386,6 +500,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fffaf2cc', GradientType=0);
 }
+/* line 245, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003245}}
 .panel-danger > .panel-heading {
   background-image: -webkit-linear-gradient(top, #f2dede 0%, #ebcccc 100%);
   background-image: -o-linear-gradient(top, #f2dede 0%, #ebcccc 100%);
@@ -393,6 +509,8 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffebcccc', GradientType=0);
 }
+/* line 253, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/theme.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/theme\.less}line{font-family:\00003253}}
 .well {
   background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
   background-image: -o-linear-gradient(top, #e8e8e8 0%, #f5f5f5 100%);
@@ -403,4 +521,3 @@
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-/*# sourceMappingURL=theme.css.map */

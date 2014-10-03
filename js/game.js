@@ -224,12 +224,22 @@ game.accion = function() {
                 //para dispositivos móviles, la lista si supera x digitos se acorta
                 if (funciones.config().tipoDispositivo("movil") === true) {
                     var milista = localStorage.etLista;
-                    if (milista.length > 7) {
-                        milista = milista.slice(0, 8);
+                    if (milista.length > 9) {
+                        milista = milista.slice(0, 9);
                         milista += "...";
                     }
+                    var minivel = localStorage.etNivel;
+                    
+                    if(minivel.indexOf("Books: ")>=0){
+                        
+                        minivel=minivel.substring(7,minivel.length);
+                    }
+                    if (minivel.length > 11) {
+                        minivel = minivel.slice(0, 11);
+                        minivel += "...";
+                    }
 
-                    document.getElementById("infoLista").innerHTML = "Level " + localStorage.etNivel + " - List " + milista;
+                    document.getElementById("infoLista").innerHTML = minivel + " - " + milista;
                 } else {
                     document.getElementById("infoLista").innerHTML = "Level " + localStorage.etNivel + " - List " + localStorage.etLista + " - Id " + game.cuestionario[game.pos].id;
                     //si no es movil, dejo 2 lineas vacias para mejora de visualización, en pregunta.
@@ -360,15 +370,15 @@ game.accion = function() {
                     var txt = document.getElementById('escrito').value;
                     var txt2 = txt.substr(0, txt.length - 1);
                     if (pulsado.toString().toLowerCase() === "s") {
-                        game.temporizador().paraTiempo();
+//                        game.temporizador().paraTiempo();
                         game.config().botonSpeak();
                         document.getElementById('escrito').value = txt2;
                     } else if (pulsado.toString().toLowerCase() === "h") {
-                        game.temporizador().paraTiempo();
+//                        game.temporizador().paraTiempo();
                         game.config().botonAyuda();
                         document.getElementById('escrito').value = txt2;
                     } else if (pulsado.toString().toLowerCase() === "m") {
-                        game.temporizador().paraTiempo();
+//                        game.temporizador().paraTiempo();
                         if ($("#mark").prop("checked")) {
                             $("#mark").prop("checked", "");
                         } else {

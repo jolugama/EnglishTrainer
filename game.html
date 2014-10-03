@@ -69,22 +69,35 @@
                         <label id="errores" style="max-height: 10px;"></label>
                     </div>
 
-
                     <div class="row">
-                        <div class="col-xs-7 col-md-8 col-lg-4">
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-10 col-lg-10">
                             <button type="button"  disabled="" id="bhelp" class="btn btn-info btn-lg" onclick="game.config().botonAyuda()">Help</button>
                             <button type="button" disabled="" id="bspeak" class="btn btn-info btn-lg" onclick="game.config().botonSpeak()">speak</button>
-                            <label><input type="checkbox" id="mark"> Mark</label>
-                        </div>
-                        <div class="col-xs-2 col-md-1 col-lg-1"  id="timer" onclick="game.config().clickTiempo()"  style="cursor: crosshair; margin-bottom: 10px"></div>
-                    </div>
+                            <button type="button" disabled="" id="bpasar" class="btn btn-primary btn-lg" onclick="game.accion().pasar()" style="padding-left: 30px; padding-right: 30px">Skip</button>
 
+                        </div>
+
+                    </div>
+                    <p></p>
+                    <div class="row">
+                        <div class="col-xs-1 col-md-1 col-lg-1"  id="timer" onclick="game.config().clickTiempo()"  style="cursor: crosshair;">
+
+                        </div>
+                        <div class="col-xs-5 col-md-10 col-lg-10" style="margin-top: 12px">
+                            <label><input type="checkbox" id="mark"> Mark</label>  
+                        </div>
+
+                    </div>
 
 
                     <div class="form-group col-xs-12 col-md-4 col-lg-3 ">
 
-                        <button type="button" disabled="" id="bpasar" class="btn btn-primary btn-lg btn-block" onclick="game.accion().pasar()">Skip</button>
                     </div>
+
+
 
 
                     <!--  <div class="progress progress-striped">

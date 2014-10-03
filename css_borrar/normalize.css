@@ -1,0 +1,260 @@
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/* line 9, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\000039}}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+/* line 19, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\0000319}}
+body {
+  margin: 0;
+}
+/* line 32, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\0000332}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+/* line 52, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\0000352}}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+/* line 65, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\0000365}}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/* line 75, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\0000375}}
+[hidden],
+template {
+  display: none;
+}
+/* line 87, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\0000387}}
+a {
+  background: transparent;
+}
+/* line 95, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\0000395}}
+a:active,
+a:hover {
+  outline: 0;
+}
+/* line 107, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003107}}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+/* line 115, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003115}}
+b,
+strong {
+  font-weight: bold;
+}
+/* line 124, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003124}}
+dfn {
+  font-style: italic;
+}
+/* line 133, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003133}}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+/* line 142, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003142}}
+mark {
+  background: #ff0;
+  color: #000;
+}
+/* line 151, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003151}}
+small {
+  font-size: 80%;
+}
+/* line 159, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003159}}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+/* line 167, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003167}}
+sup {
+  top: -0.5em;
+}
+/* line 171, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003171}}
+sub {
+  bottom: -0.25em;
+}
+/* line 182, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003182}}
+img {
+  border: 0;
+}
+/* line 190, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003190}}
+svg:not(:root) {
+  overflow: hidden;
+}
+/* line 201, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003201}}
+figure {
+  margin: 1em 40px;
+}
+/* line 209, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003209}}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+/* line 219, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003219}}
+pre {
+  overflow: auto;
+}
+/* line 227, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003227}}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+/* line 250, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003250}}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+/* line 264, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003264}}
+button {
+  overflow: visible;
+}
+/* line 275, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003275}}
+button,
+select {
+  text-transform: none;
+}
+/* line 288, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003288}}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+/* line 300, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003300}}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+/* line 309, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003309}}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/* line 320, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003320}}
+input {
+  line-height: normal;
+}
+/* line 332, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003332}}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+/* line 344, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003344}}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/* line 355, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003355}}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* line 368, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003368}}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/* line 377, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003377}}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+/* line 388, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003388}}
+legend {
+  border: 0;
+  padding: 0;
+}
+/* line 397, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003397}}
+textarea {
+  overflow: auto;
+}
+/* line 406, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003406}}
+optgroup {
+  font-weight: bold;
+}
+/* line 417, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003417}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* line 422, /home/jolugama/NetBeansProjects/JolugamaGameEcmaScript2/public_html/less/normalize.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/jolugama\/NetBeansProjects\/JolugamaGameEcmaScript2\/public_html\/less\/normalize\.less}line{font-family:\00003422}}
+td,
+th {
+  padding: 0;
+}
