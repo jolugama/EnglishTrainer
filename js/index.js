@@ -15,7 +15,7 @@ $(document).ready(function () {
     if (esChrome) {
         $('#eschrome').hide();
     } else {
-         
+
     }
 //websql.realiza().query("DROP TABLE IF EXISTS GAME_REG");
     websql.realiza().query("CREATE TABLE IF NOT EXISTS GAME_REG (id_reg INTEGER PRIMARY KEY AUTOINCREMENT,id INTEGER,tipojuego TEXT,idioma TEXT,correcto INTEGER,erroneo INTEGER,mark INTEGER)");
@@ -44,12 +44,16 @@ $(window).on('load', function () {
     }
 
 //cargo tipoJuego
+    index.voc_ingJSON = funciones.json().stringToJson2(localStorage.etVocabularioIngles);
+    index.fra_ingJSON = funciones.json().stringToJson2(localStorage.etFrasesIngles);
+
     document.getElementById("tipoJuego").value = localStorage.etTipoJuego;
     index.accion().estadoSelectTipoJuego();
     $('#infoCarga').hide();
     $('#miformulario').fadeIn(3000);
 
     index.config().compruebaFelicitaciones();
+
 });
 /**
  *
@@ -62,12 +66,16 @@ index.config = function () {
             websql.realiza().transaccionAsync("select count(*) as num from GAME_VOC_ING where lista='FELICITACIONES'", function (datos) {
 
                 if (datos[0].num === 0) {
-                    console.log('se inserta felicitaciones felicitaciones')
+                    //se inserta los niveles para estádisticas
+                    localStorage.etNivelesVocabularioIngles = index.accion().recogeNiveles(index.voc_ingJSON);
+                    localStorage.etNivelesFrasesIngles = index.accion().recogeNiveles(index.fra_ingJSON);
+
+                    console.log('se inserta felicitaciones felicitaciones');
                     index.accion().inserccion(index.voc_ingJSON, '1', 'FELICITACIONES', function () {
-                        console.log('felicitaciones insertadas!')
+                        console.log('felicitaciones insertadas!');
                     });
                 }
-            })
+            });
         },
         botonPlay: function () {
             var nivel = document.getElementById("selectNivel").value;
@@ -117,10 +125,10 @@ index.config = function () {
             for (var i = 0; i < juegosJugados.length; i++) {
                 var juego = juegosJugados[i].split("-");
                 if (juego[1] === nivel.value) {
-                    listado.push(juego[2])
+                    listado.push(juego[2]);
                 }
             }
-            _.shuffle(listado)
+            _.shuffle(listado);
 
             do {
                 num = _.random(0, lista.length - 3);
@@ -155,15 +163,9 @@ index.accion = function () {
                 document.getElementById('tipoJuego').selectedIndex = 0;
             }
             var tipoJuego = document.getElementById("tipoJuego").value;
-            var cString;
+
             localStorage.etTipoJuego = document.getElementById("tipoJuego").value;
-            if (tipoJuego === 'Vocabulary') {
-                cString = localStorage.etVocabularioIngles;
-                index.voc_ingJSON = funciones.json().stringToJson2(cString);
-            } else {
-                cString = localStorage.etFrasesIngles;
-                index.fra_ingJSON = funciones.json().stringToJson2(cString);
-            }
+
 
             index.accion().rellenaSelectNivel(tipoJuego);
 
@@ -343,6 +345,16 @@ index.accion = function () {
                 }
             }
             websql.realiza().transaccionAsyncScript(arraydeInsercciones, callback);
+        },
+        recogeNiveles: function (c) {
+            // c --> coleccionObjetosJson;
+            var niveles = [];
+            for (var x = 0; x < c.length; x++) {
+                niveles.push(c[x].N.toString());
+            }
+            niveles = funciones.array().ordenayUnicos(niveles);
+            return niveles.join(',');
+
         }
 
     };

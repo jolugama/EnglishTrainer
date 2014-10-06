@@ -5,7 +5,7 @@ websql.crear().dataBaseAsync("jolugamaweb", "0.1", "English Trainer - JoLuGaMa W
 statistics.mipie;
 statistics.mibar;
 
-$(document).ready(function() {
+$(document).ready(function () {
     if (localStorage.etTipoJuego === 'Vocabulary') {
         document.getElementById('tipoJuego').selectedIndex = 0;
     } else {
@@ -15,58 +15,88 @@ $(document).ready(function() {
 });
 
 
-window.onload = function() {
+window.onload = function () {
     statistics.accion().estadoSelectTipoJuego();
 };
 
 
-statistics.config = function() {
+statistics.config = function () {
     return{
-        goBack: function() {
+        goBack: function () {
             window.location.href = 'index.html';
         }
     };
 };
 
-statistics.accion = function() {
+statistics.accion = function () {
     return{
-        estadoSelectTipoJuego: function() {
+        estadoSelectTipoJuego: function () {
 
             var tabla;
             var tipojuego;
+            var misNiveles;
 
             var tipoJuego = document.getElementById("tipoJuego").value.toLowerCase();
             if (tipoJuego === 'vocabulary') {
                 tabla = "GAME_VOC_ING";
                 tipojuego = "v";
+                misNiveles = localStorage.etNivelesVocabularioIngles;
             } else {
                 tabla = "GAME_FRA_ING";
                 tipojuego = "p";
+                misNiveles = localStorage.etNivelesFrasesIngles;
             }
+
 
 
             var consulta = " select sum(correcto) as correcto,sum(erroneo) as erroneo, nivel  from "
                     + " (SELECT " + tabla + ".TIPO,ifnull(correcto,0) as correcto,ifnull(erroneo,0) as erroneo,nivel FROM " + tabla + "  "
                     + " left OUTER JOIN (select * from GAME_REG where tipojuego='" + tipojuego + "') as tabla on " + tabla + ".ID=tabla.ID "
-                    + ")supertabla group by nivel";
+                    + ")supertabla group by nivel order by nivel";
             var arrayNiveles = [];
             try {
                 websql.realiza().transaccionAsync(consulta,
-                        function(datos) {
+                        function (datos) {
 
                             var arrayAciertos = [];
                             var arrayFallos = [];
                             var totalAciertos = 0;
                             var totalFallos = 0;
 
-                            for (var i = 0; i < datos.length; i++) {
-                                arrayNiveles.push(datos[i].nivel);
-                                arrayAciertos.push(datos[i].correcto);
-                                arrayFallos.push(datos[i].erroneo);
-                                //console.log(datos[i].nivel + " " + datos[i].correcto + " " + datos[i].erroneo);
-                                totalAciertos += datos[i].correcto;
-                                totalFallos += datos[i].erroneo;
+                            var niveles = misNiveles.split(",");
+
+                            for (var j = 0; j < niveles.length; j++) {
+                                arrayNiveles.push(niveles[j])
+
+                                var encontrado = false;
+                                for (var i = 0; i < datos.length; i++) {
+                                    if (datos[i].nivel === niveles[j]) {
+                                        arrayAciertos.push(datos[i].correcto);
+                                        arrayFallos.push(datos[i].erroneo);
+                                        totalAciertos += datos[i].correcto;
+                                        totalFallos += datos[i].erroneo;
+                                        encontrado = true;
+                                        break;
+                                    } 
+
+                                }
+                                if (encontrado === true) {
+                                    encontrado = false;
+                                }else{
+                                    arrayAciertos.push(0);
+                                    arrayFallos.push(0);
+                                }
+
                             }
+                            
+                            
+//                            //para cuando se carga y aun no hay aciertos y fallos, que se vea bonito.
+//                            if(totalAciertos===0 && totalFallos===0){
+//                                totalAciertos=1;
+//                                totalFallos=1;
+//                            }
+                         
+
 
                             //console.log(totalAciertos);
                             var pieData = [
@@ -104,13 +134,8 @@ statistics.accion = function() {
                                 ]
 
                             };
-                            for (var i = 1; i <= 6; i++) {
-                                if (arrayNiveles.length < i) {
-                                    arrayNiveles.push(i)
-                                    arrayAciertos.push(0);
-                                    arrayFallos.push(0);
-                                }
-                            }
+
+
 
 //
 
