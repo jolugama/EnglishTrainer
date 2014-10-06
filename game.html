@@ -63,7 +63,7 @@
                         <label id="respuesta"></label>
                     </div>
                     <div class="form-group">
-                        <input  class="form-control" id="escrito" placeholder="Write the answer" autocomplete="off" onblur="game.config().vuelveFoco()" onkeyup="game.accion().corrige(event)"  >
+                        <input  class="form-control" id="escrito" placeholder="Write the answer" autocomplete="off" onblur="game.config().vuelveFoco()" onkeyup="game.accion().corrige(event)" onkeydown="game.accion().shortcuts(event)" >
                     </div>
                     <div class="form-group">
                         <label id="errores" style="max-height: 10px;"></label>
@@ -74,20 +74,20 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-md-10 col-lg-10">
-                            <button type="button"  disabled="" id="bhelp" class="btn btn-info btn-lg" onclick="game.config().botonAyuda()">Help</button>
-                            <button type="button" disabled="" id="bspeak" class="btn btn-info btn-lg" onclick="game.config().botonSpeak()">speak</button>
-                            <button type="button" disabled="" id="bpasar" class="btn btn-primary btn-lg" onclick="game.accion().pasar()" style="padding-left: 30px; padding-right: 30px">Skip</button>
+                            <button type="button"  disabled="" id="bhelp" class="btn btn-info btn-lg" onclick="game.config().botonAyuda()" title="Push me if you need show the answer!. Use shift+h">Help</button>
+                            <button type="button" disabled="" id="bspeak" class="btn btn-info btn-lg" onclick="game.config().botonSpeak()" title="If you need to listen for the answer. Use shift+s">speak</button>
+                            <button type="button" disabled="" id="bpasar" class="btn btn-primary btn-lg" onclick="game.accion().pasar()" style="padding-left: 30px; padding-right: 30px" title="Go to the next question. Use escape button.">Skip</button>
 
                         </div>
 
                     </div>
                     <p></p>
                     <div class="row">
-                        <div class="col-xs-1 col-md-1 col-lg-1"  id="timer" onclick="game.config().clickTiempo()"  style="cursor: crosshair;">
+                        <div class="col-xs-1 col-md-1 col-lg-1"  id="timer" onClick="game.config().clickTiempo()"  style="cursor: crosshair;" title="Press to stop / start time. Use shift+c">
 
                         </div>
                         <div class="col-xs-5 col-md-10 col-lg-10" style="margin-top: 12px">
-                            <label><input type="checkbox" id="mark"> Mark</label>  
+                            <label for="mark" title="Use with difficult words. Then you can go to datagrid and study it carefully. Use shift+m"><input type="checkbox" id="mark" > Mark</label>  
                         </div>
 
                     </div>

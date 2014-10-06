@@ -21,14 +21,14 @@ game.corregida = false; //cuando se ha insertado como error o como acierto, se p
 game.tiempoVocabulario = 12;
 game.tiempoIrregulares = 20;
 game.tiempoFrases = 27;
-$(document).ready(function() {
+$(document).ready(function () {
     $('body').hide();
     $('body').fadeIn(3000);
 });
 /*
  * carga datos al iniciar.
  */
-$(window).on('load', function() {
+$(window).on('load', function () {
     document.querySelector("#escrito").spellcheck = false; //para navegadores con control de ortografia. se desactiva.
     game.config().vuelveFoco();
     game.config().leeDatos();
@@ -36,7 +36,7 @@ $(window).on('load', function() {
 //en moviles la primera vez se atranca el sonido. se fuerza para que se prepare.
     funciones.sonidos().habla("en", ".");
     funciones.sonidosArray = funciones.array().desordena(funciones.sonidosArray);
-    //workaround: reviso errores cada segundo. Esto es porque en android, el retroceso no lo cuenta como tecla pulsada.
+    
     setInterval("game.accion().actualizaErrores()", 1000);
 
 });
@@ -44,13 +44,13 @@ $(window).on('load', function() {
  * Todo lo relacionado con el inicio de listas, botoneras, etc en el programa
  * @returns {game.config.Anonym$1}
  */
-game.config = function() {
+game.config = function () {
     return{
         /**
          * carga los datos de sesión, cuestionario, felicitaciones y imprime la primera pregunta.
          * @returns {undefined}
          */
-        leeDatos: function() {
+        leeDatos: function () {
             var nivel = localStorage.etNivel;
             var lista = localStorage.etLista;
             var tipoJuego = localStorage.etTipoJuego;
@@ -82,7 +82,7 @@ game.config = function() {
             } else if (lista === 'Marks') {
                 query = "SELECT * FROM GAME_REG left outer join " + tabla + " ON " + tabla + ".id=GAME_REG.id where tipojuego='" + tipo + "' and nivel='" + nivel + "' and mark=1";
             }
-            websql.realiza().transaccionAsync(query, function(datos) {
+            websql.realiza().transaccionAsync(query, function (datos) {
                 game.cuestionario = datos;
                 if (tipoJuego === 'Vocabulary') {
                     game.cuestionario = funciones.array().desordena(game.cuestionario); //desordeno la secuencia de las preguntas en vocabulario
@@ -95,7 +95,7 @@ game.config = function() {
                 game.accion().imprimirPregunta();
             });
             game.felicitaciones = new Array();
-            websql.realiza().transaccionAsync("SELECT * FROM GAME_VOC_ING where nivel=1 and lista='FELICITACIONES' ", function(datos) {
+            websql.realiza().transaccionAsync("SELECT * FROM GAME_VOC_ING where nivel=1 and lista='FELICITACIONES' ", function (datos) {
                 game.felicitaciones = datos;
                 game.felicitaciones = funciones.array().desordena(game.felicitaciones);
             });
@@ -113,20 +113,20 @@ game.config = function() {
          * para boton de regresar al inicio
          * @returns {undefined}
          */
-        goBack: function() {
+        goBack: function () {
             window.location.href = 'index.html';
         },
-        botonAyuda: function() {
+        botonAyuda: function () {
             game.preguntaFallida = true;
             document.getElementById("bhelp").disabled = "disabled";
             document.getElementById("respuesta").innerHTML = game.cuestionario[game.pos].respuesta;
         },
-        botonSpeak: function() {
+        botonSpeak: function () {
             game.preguntaFallida = true;
             document.getElementById("bspeak").disabled = "disabled";
 //            funciones.sonidos().habla("es", game.cuestionario[game.pos].pregunta);
             funciones.sonidos().habla("en", game.cuestionario[game.pos].respuesta);
-            setTimeout(function() {
+            setTimeout(function () {
                 document.getElementById("bspeak").disabled = "";
             }, 2500);
         },
@@ -134,14 +134,14 @@ game.config = function() {
          * vuelve el foco siempre a lo que se esté escribiendo
          * @returns {undefined}
          */
-        vuelveFoco: function() {
+        vuelveFoco: function () {
             document.getElementById('escrito').focus();
         },
         /**
          * Todos los componentes necesarios activados
          * @returns {undefined}
          */
-        enableTagHtml: function() {
+        enableTagHtml: function () {
             document.getElementById('errores').innerHTML = "";
             document.getElementById("escrito").disabled = false;
             document.getElementById("escrito").readOnly = false;
@@ -156,7 +156,7 @@ game.config = function() {
          * Todos los componentes necesarios desactivados
          * @returns {undefined}
          */
-        disableTagHtml: function() {
+        disableTagHtml: function () {
             document.getElementById("escrito").disabled = true;
             document.getElementById("escrito").readOnly = true;
             document.getElementById("bpasar").disabled = "disabled";
@@ -168,7 +168,7 @@ game.config = function() {
          * segun el juego la respuesta puede estar codificada, alterada aleatoriamente, oculta, o hablada.
          * @returns {undefined}
          */
-        modoJuego: function() {
+        modoJuego: function () {
             game.temporizador().paraTiempo();
             var modoJuego = document.getElementById("modoJuego").value.toLowerCase();
             if (modoJuego === 'normal') {
@@ -193,7 +193,7 @@ game.config = function() {
             }
             localStorage.etModoJuego = document.getElementById("modoJuego").value;
         },
-        clickTiempo: function() {
+        clickTiempo: function () {
             if (game.estadoTiempoIniciado === false) {
                 game.temporizador().reiniciaTiempo();
             } else {
@@ -202,9 +202,9 @@ game.config = function() {
         }
     };
 };
-game.accion = function() {
+game.accion = function () {
     return {
-        imprimirPregunta: function() {
+        imprimirPregunta: function () {
             try {
                 game.corregida = false;
                 game.preguntaFallida = false; //en cada pregunta vuelve a su estado inicial.
@@ -229,10 +229,10 @@ game.accion = function() {
                         milista += "...";
                     }
                     var minivel = localStorage.etNivel;
-                    
-                    if(minivel.indexOf("Books: ")>=0){
-                        
-                        minivel=minivel.substring(7,minivel.length);
+
+                    if (minivel.indexOf("Books: ") >= 0) {
+
+                        minivel = minivel.substring(7, minivel.length);
                     }
                     if (minivel.length > 11) {
                         minivel = minivel.slice(0, 11);
@@ -256,7 +256,7 @@ game.accion = function() {
             }
 
         },
-        comprobarCheck: function() {
+        comprobarCheck: function () {
             try {
                 var id = game.cuestionario[game.pos].id;
                 var t = localStorage.etTipoJuego;
@@ -268,7 +268,7 @@ game.accion = function() {
                 }
 
                 websql.realiza().transaccionAsync("select id,mark from GAME_REG where id=" + id + " and tipojuego='" + tipojuego + "'",
-                        function(datos) { //1º callback. guardadatos
+                        function (datos) { //1º callback. guardadatos
                             try {
                                 if (datos[0].mark === 1) {
                                     $("#mark").prop("checked", "checked");
@@ -283,7 +283,7 @@ game.accion = function() {
                 //console.log(e.message);
             }
         },
-        imprimeFelicitacion: function() {
+        imprimeFelicitacion: function () {
             try {
                 game.posFelicitacion += 1;
                 if (game.felicitaciones[game.posFelicitacion] === undefined) {
@@ -302,7 +302,7 @@ game.accion = function() {
          * @returns {undefined}
          * @param {type} pasar si true, el tiempo sera de pasar. si false, el tiempo es de una pregunta normal.
          */
-        finDeRonda: function(pasar) {
+        finDeRonda: function (pasar) {
             //desordeno de nuevo
             var tipoJuego = localStorage.etTipoJuego;
             var lista = localStorage.etLista;
@@ -328,7 +328,7 @@ game.accion = function() {
             }
 
         },
-        pasar: function() {
+        pasar: function () {
             game.temporizador().paraTiempo();
             document.getElementById('respuesta').innerHTML = game.cuestionario[game.pos].respuesta;
             game.config().disableTagHtml();
@@ -339,8 +339,8 @@ game.accion = function() {
             game.accion().insertaFallo();
 
         },
-        insertaAcierto: function() {
-            game.accion().insertaRegistro(true, function() {
+        insertaAcierto: function () {
+            game.accion().insertaRegistro(true, function () {
                 console.log("acierta " + game.cuestionario[game.pos].pregunta);
                 //si la proxima es fin de ronda... , de lo contrario siguiente pregunta
                 if (game.cuestionario[game.pos + 1] === undefined) {
@@ -350,8 +350,8 @@ game.accion = function() {
                 }
             });
         },
-        insertaFallo: function() {
-            game.accion().insertaRegistro(false, function() {
+        insertaFallo: function () {
+            game.accion().insertaRegistro(false, function () {
                 console.log("falla " + game.cuestionario[game.pos].pregunta);
                 //si la proxima es fin de ronda... , de lo contrario siguiente pregunta
                 if (game.cuestionario[game.pos + 1] === undefined) {
@@ -361,36 +361,54 @@ game.accion = function() {
                 }
             });
         },
-        corrige: function(event) {
+        shortcuts: function (event) {
             if (game.corregida === false) {
-                var modoJuego = document.getElementById("modoJuego").value.toLowerCase();
                 //shortcuts
                 if (event.shiftKey) {
                     var pulsado = String.fromCharCode(event.keyCode || event.charCode);
-                    var txt = document.getElementById('escrito').value;
-                    var txt2 = txt.substr(0, txt.length - 1);
+//                    var txt = document.getElementById('escrito').value;
+//                    var txt2 = txt.substr(0, txt.length - 1);
                     if (pulsado.toString().toLowerCase() === "s") {
+                        event.preventDefault();
+                        //document.getElementById('escrito').value = txt2;
 //                        game.temporizador().paraTiempo();
+
                         game.config().botonSpeak();
-                        document.getElementById('escrito').value = txt2;
+
                     } else if (pulsado.toString().toLowerCase() === "h") {
 //                        game.temporizador().paraTiempo();
+                        event.preventDefault();
+                        //document.getElementById('escrito').value = txt2;
                         game.config().botonAyuda();
-                        document.getElementById('escrito').value = txt2;
+
                     } else if (pulsado.toString().toLowerCase() === "m") {
+//                        document.getElementById('escrito').value = txt2;
+                        event.preventDefault();
 //                        game.temporizador().paraTiempo();
                         if ($("#mark").prop("checked")) {
                             $("#mark").prop("checked", "");
                         } else {
                             $("#mark").prop("checked", "checked");
                         }
-                        document.getElementById('escrito').value = txt2;
+                    } else if (pulsado.toString().toLowerCase() === "c") {
+                        game.config().clickTiempo()
+                        event.preventDefault();
+                        // document.getElementById('escrito').value = txt2;
                     }
                 }
                 if (event.keyCode == 27) {  //si se pulsa escape
                     game.corregida = true;
                     game.accion().pasar();
                 }
+                if (event.keyCode == 8) {  //si se pulsa escape
+                    game.accion().corrige(event);
+                }
+            }
+        },
+        corrige: function (event) {
+            if (game.corregida === false) {
+                var modoJuego = document.getElementById("modoJuego").value.toLowerCase();
+
 
                 if (game.cuestionario[game.pos] !== undefined) { //si existe respuesta...
                     //verifica errores
@@ -430,7 +448,8 @@ game.accion = function() {
                 }
             }
         },
-        actualizaErrores: function() {
+        //workaround: reviso errores cada segundo. Esto es porque en android, el retroceso no lo cuenta como tecla pulsada.
+        actualizaErrores: function () {
             if (document.getElementById("escrito").disabled === false) {  //para que si es findeRonda, si se desordena de nuevo no haga cosas raras
                 try {
                     //mientras no sea correcta la respuesta(para que no se ejecute 2 veces)
@@ -442,7 +461,7 @@ game.accion = function() {
                 }
             }
         },
-        insertaRegistro: function(escorrecto, callback) {
+        insertaRegistro: function (escorrecto, callback) {
             var id = game.cuestionario[game.pos].id;
             var t = localStorage.etTipoJuego;
             var tipojuego;
@@ -464,10 +483,10 @@ game.accion = function() {
             }
 
             websql.realiza().transaccionAsync("select * from GAME_REG where id=" + id + " and tipojuego='" + tipojuego + "'",
-                    function(datos) { //1º callback. guardadatos
+                    function (datos) { //1º callback. guardadatos
                         misdatos = datos;
                         //console.log(datos)
-                    }, function() {  //2º callback. fin de la transaccion
+                    }, function () {  //2º callback. fin de la transaccion
                 if (misdatos.length === 0) {
                     if (escorrecto === true) {
                         correcto = 1;
@@ -499,9 +518,9 @@ game.accion = function() {
 
     };
 };
-game.string = function() {
+game.string = function () {
     return {
-        encripta: function(texto) {
+        encripta: function (texto) {
             var resultado = "";
             for (var i in texto) {
                 if (texto[i] === ' ') {
@@ -514,7 +533,7 @@ game.string = function() {
             }
             return resultado;
         },
-        encriptaPellmell: function(texto) {
+        encriptaPellmell: function (texto) {
             var arrayTexto = [];
             arrayTexto = texto.split(" ");
             arrayTexto = funciones.array().desordena(arrayTexto);
@@ -528,7 +547,7 @@ game.string = function() {
 
             return arrayTexto.join(' ').toString();
         },
-        verificaErrores: function(textoOriginal, textoaComparar) {
+        verificaErrores: function (textoOriginal, textoaComparar) {
             var errores = 0;
             try {
                 for (var i in textoaComparar) {
@@ -561,7 +580,7 @@ game.string = function() {
 
             return errores;
         },
-        esIgual: function(str1, str2) {
+        esIgual: function (str1, str2) {
             //0 si es igual
             if (str1.toLowerCase().localeCompare(str2.toLowerCase()) === 0) {
                 return true;
@@ -571,9 +590,9 @@ game.string = function() {
         }
     };
 };
-game.temporizador = function() {
+game.temporizador = function () {
     return{
-        iniciaTiempo: function(tiempo) {
+        iniciaTiempo: function (tiempo) {
             if (funciones.config().tipoDispositivo("movil") === true) {
                 tiempo += 8; //se da más tiempo por ser dispositivo móvil
             }
@@ -583,7 +602,7 @@ game.temporizador = function() {
                 color: '#ccc',
                 fill: false,
                 showPercentage: true,
-                callback: function() {
+                callback: function () {
                     //que hacer aqui
                     $('#cuerpo').css('background-color', '#F3F3F3');
                     if (funciones.config().tipoDispositivo("movil") === false) {
@@ -593,7 +612,7 @@ game.temporizador = function() {
             });
             $('#timer').pietimer('reset');
         },
-        reiniciaTiempo: function() {
+        reiniciaTiempo: function () {
             $('#timer').css('color', '#ccc');
             $('#cuerpo').css('background-color', '#FFF');
 //    $('#timer').hide();
@@ -601,7 +620,7 @@ game.temporizador = function() {
             $('#timer').pietimer('start');
             game.estadoTiempoIniciado = true;
         },
-        paraTiempo: function() {
+        paraTiempo: function () {
             $('#cuerpo').css('background-color', '#FFF');
             $('#timer').css('color', '#FFF');
             // $('#timer').pietimer('stopWatch');
