@@ -39,7 +39,7 @@
         <button type="button" id="miBoton" class="btn btn-primary"  onclick="game.config().goBack()" style="margin-left:5px; "><- Go Back</button>
         <form class="form-inline" role="form">
             <span style="float:right; margin-right:5px; margin-top: -32px; color:#ffffff">Mode
-                <select class="form-control " id="modoJuego" onchange="game.config().modoJuego()">
+                <select class="form-control " id="modoJuego" onchange="game.config().modoJuego()"   onmouseover="game.temporizador().paraTiempo()">
                     <option>Normal</option>
                     <option>PellMell</option>
                     <option>Hidden</option>
@@ -69,9 +69,7 @@
                         <label id="errores" style="max-height: 10px;"></label>
                     </div>
 
-                    <div class="row">
-
-                    </div>
+                    
                     <div class="row">
                         <div class="col-xs-12 col-md-10 col-lg-10">
                             <button type="button"  disabled="" id="bhelp" class="btn btn-info btn-lg" onclick="game.config().botonAyuda()" title="Push me if you need show the answer!. Use shift+h">Help</button>
@@ -83,11 +81,11 @@
                     </div>
                     <p></p>
                     <div class="row">
-                        <div class="col-xs-1 col-md-1 col-lg-1"  id="timer" onClick="game.config().clickTiempo()"  style="cursor: crosshair;" title="Press to stop / start time. Use shift+c">
+                        <div class="col-xs-1 col-md-1 col-lg-1"  id="timer" onClick="game.config().clickTiempo()"  style="cursor: crosshair;" title="Press to stop / start time. Use shift+c for restart time">
 
                         </div>
                         <div class="col-xs-5 col-md-10 col-lg-10" style="margin-top: 12px">
-                            <label for="mark" title="Use with difficult words. Then you can go to datagrid and study it carefully. Use shift+m"><input type="checkbox" id="mark" > Mark</label>  
+                            <label for="mark" title="Use with difficult words. Then you can go to datagrid and study it carefully. Use shift+m" onclick="game.config().clickMarca()" style="color:#c1c1c1"><input type="checkbox" id="mark" > Mark</label>  
                         </div>
 
                     </div>

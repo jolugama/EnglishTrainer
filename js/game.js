@@ -36,9 +36,8 @@ $(window).on('load', function () {
 //en moviles la primera vez se atranca el sonido. se fuerza para que se prepare.
     funciones.sonidos().habla("en", ".");
     funciones.sonidosArray = funciones.array().desordena(funciones.sonidosArray);
-    
-    setInterval("game.accion().actualizaErrores()", 1000);
 
+    setInterval("game.accion().actualizaErrores()", 1000);
 });
 /**
  * Todo lo relacionado con el inicio de listas, botoneras, etc en el programa
@@ -199,6 +198,11 @@ game.config = function () {
             } else {
                 game.temporizador().paraTiempo();
             }
+        },
+        clickMarca: function () {
+            if (funciones.config().tipoDispositivo("movil") === false) {
+                funciones.sonidos().suenaMp3(this, 'sound/mark.mp3');
+            }
         }
     };
 };
@@ -206,6 +210,7 @@ game.accion = function () {
     return {
         imprimirPregunta: function () {
             try {
+                document.getElementById("respuesta").style.color="#c1c1c1";
                 game.corregida = false;
                 game.preguntaFallida = false; //en cada pregunta vuelve a su estado inicial.
                 game.pos += 1;
@@ -303,6 +308,10 @@ game.accion = function () {
          * @param {type} pasar si true, el tiempo sera de pasar. si false, el tiempo es de una pregunta normal.
          */
         finDeRonda: function (pasar) {
+            if (funciones.config().tipoDispositivo("movil") === false) {
+                funciones.sonidos().suenaMp3(this, 'sound/finish.mp3');
+            }
+
             //desordeno de nuevo
             var tipoJuego = localStorage.etTipoJuego;
             var lista = localStorage.etLista;
@@ -364,7 +373,7 @@ game.accion = function () {
         shortcuts: function (event) {
             if (game.corregida === false) {
                 //shortcuts
-                if (event.shiftKey) {
+                if (event.shiftKey) {;
                     var pulsado = String.fromCharCode(event.keyCode || event.charCode);
 //                    var txt = document.getElementById('escrito').value;
 //                    var txt2 = txt.substr(0, txt.length - 1);
@@ -382,6 +391,7 @@ game.accion = function () {
                         game.config().botonAyuda();
 
                     } else if (pulsado.toString().toLowerCase() === "m") {
+                        game.config().clickMarca();
 //                        document.getElementById('escrito').value = txt2;
                         event.preventDefault();
 //                        game.temporizador().paraTiempo();
@@ -391,7 +401,7 @@ game.accion = function () {
                             $("#mark").prop("checked", "checked");
                         }
                     } else if (pulsado.toString().toLowerCase() === "c") {
-                        game.config().clickTiempo()
+                        game.temporizador().paraTiempo();
                         event.preventDefault();
                         // document.getElementById('escrito').value = txt2;
                     }
@@ -416,6 +426,7 @@ game.accion = function () {
                     //si es igual la respuesta a lo escrito
                     if (game.string().esIgual(game.cuestionario[game.pos].respuesta, document.getElementById("escrito").value) === true) {
                         game.temporizador().paraTiempo();
+                        document.getElementById("respuesta").style.color="black";
                         document.getElementById("escrito").disabled = true;
                         document.getElementById("escrito").readOnly = true;
                         document.getElementById('errores').style.color = "green";
@@ -606,6 +617,7 @@ game.temporizador = function () {
                     //que hacer aqui
                     $('#cuerpo').css('background-color', '#F3F3F3');
                     if (funciones.config().tipoDispositivo("movil") === false) {
+                        funciones.sonidos().suenaMp3(this, 'sound/time.mp3');
                         game.preguntaFallida = true;
                     }
                 }, timerCurrent: 0

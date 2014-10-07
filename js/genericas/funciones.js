@@ -3,9 +3,9 @@ var funciones = funciones || {};
 funciones.sonidosArray = [0, 1, 2];
 funciones.posicionSonido = -1;
 
-funciones.array = function() {
+funciones.array = function () {
     return{
-        ordenayUnicos: function(arr) {
+        ordenayUnicos: function (arr) {
             //primero lo ordeno
             arr = funciones.array().ordena(arr);
 
@@ -18,18 +18,18 @@ funciones.array = function() {
             }
             return ret;
         },
-        ordena: function(arr) {
-            arr = arr.sort(function(a, b) {
+        ordena: function (arr) {
+            arr = arr.sort(function (a, b) {
                 return a - b;
             });
             return arr;
         },
-        desordena: function(arr) {
+        desordena: function (arr) {
             var result;
             var contador = 0;
             do {
                 contador += 1;
-                result = arr.sort(function() {
+                result = arr.sort(function () {
                     return Math.random() - 0.5;
                 });
                 if (contador > 4) {
@@ -42,23 +42,23 @@ funciones.array = function() {
     };
 };
 
-funciones.numeros = function() {
+funciones.numeros = function () {
     return{
-        random: function(numeroMaximo) {
+        random: function (numeroMaximo) {
             var num = Math.floor((Math.random() * numeroMaximo));
             return num;
         }
     };
 };
 
-funciones.config = function() {
+funciones.config = function () {
     return{
         /**
          *
          * @param {type} tipoDispositivo movil,android
          * @returns {resultado|Boolean}
          */
-        tipoDispositivo: function(tipoDispositivo) {
+        tipoDispositivo: function (tipoDispositivo) {
             var resultado = false;
             if (tipoDispositivo === "movil") {
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
@@ -71,7 +71,7 @@ funciones.config = function() {
             }
             return resultado;
         },
-        ocultaBarra: function() {
+        ocultaBarra: function () {
             if (!window.location.hash)
             {
                 if (document.height < window.outerHeight + 10)
@@ -79,7 +79,7 @@ funciones.config = function() {
                     document.body.style.height = (window.outerHeight + 50) + 'px';
                 }
 
-                setTimeout(function()
+                setTimeout(function ()
                 {
                     window.scrollTo(0, 1);
                 }, 50);
@@ -93,7 +93,7 @@ funciones.config = function() {
  * 2 opciones. si se indica numero en el argumento, se escucha una voz especifica de 0 a 2, o aleatorio por el método
  * @returns {funciones.sonidos.Anonym$3}
  */
-funciones.sonidos = function() {
+funciones.sonidos = function () {
     return{
         /**
          *
@@ -101,7 +101,7 @@ funciones.sonidos = function() {
          * @param {type} texto
          * @returns {undefined} responde con sonido
          */
-        habla: function(idioma, texto) {
+        habla: function (idioma, texto) {
             try {
 
                 var txt;
@@ -123,15 +123,15 @@ funciones.sonidos = function() {
                     }
 //                console.log(funciones.sonidosArray[funciones.posicionSonido])
                     if (funciones.sonidosArray[funciones.posicionSonido] === 0) {
-                        voz.voice = voices.filter(function(voice) {
+                        voz.voice = voices.filter(function (voice) {
                             return voice.name === 'Google UK English Female';
                         })[0];
                     } else if (funciones.sonidosArray[funciones.posicionSonido] === 1) {
-                        voz.voice = voices.filter(function(voice) {
+                        voz.voice = voices.filter(function (voice) {
                             return voice.name === "Google UK English Male";
                         })[0];
                     } else if (funciones.sonidosArray[funciones.posicionSonido] === 2) {
-                        voz.voice = voices.filter(function(voice) {
+                        voz.voice = voices.filter(function (voice) {
                             return voice.name === "Google US English";
                         })[0];
                     }
@@ -147,26 +147,37 @@ funciones.sonidos = function() {
             } catch (e) {
                 console.log("incidencia en metodo habla")
             }
+        },
+        suenaMp3: function (esto, sonido) {
+            if (esto.mp3) {
+                if (esto.mp3.paused)
+                    esto.mp3.play();
+                else
+                    esto.mp3.pause();
+            } else {
+                esto.mp3 = new Audio(sonido);
+                esto.mp3.play();
+            }
         }
     };
 
 };
 
-funciones.json = function() {
+funciones.json = function () {
     return{
         /**
          * transforma string a formato json de objetos. (que viene de ajax)
          * @param {type} mistring
          * @returns {Array|Object}
          */
-        stringToJson: function(mistring) {
+        stringToJson: function (mistring) {
             var objetosJson = [];
             mistring = mistring.replace(/\'/g, "\"");
             //console.log(mistring)
             objetosJson = JSON.parse(mistring);
             return objetosJson;
         },
-        stringToJson2: function(mistring) {
+        stringToJson2: function (mistring) {
             var objetosJson = [];
             var mistring = mistring.replace(/'/g, "\\\""); //todas las " las paso a comillas simple
             objetosJson = JSON.parse(mistring);
@@ -175,9 +186,9 @@ funciones.json = function() {
     }
 }
 
-funciones.tiempo = function() {
+funciones.tiempo = function () {
     return{
-        sleep: function(milliseconds) {
+        sleep: function (milliseconds) {
             var start = new Date().getTime();
             for (var i = 0; i < 1e7; i++) {
                 if ((new Date().getTime() - start) > milliseconds) {
