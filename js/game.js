@@ -373,7 +373,7 @@ game.accion = function () {
         shortcuts: function (event) {
             if (game.corregida === false) {
                 //shortcuts
-                if (event.shiftKey) {;
+                if (event.shiftKey) {
                     var pulsado = String.fromCharCode(event.keyCode || event.charCode);
 //                    var txt = document.getElementById('escrito').value;
 //                    var txt2 = txt.substr(0, txt.length - 1);

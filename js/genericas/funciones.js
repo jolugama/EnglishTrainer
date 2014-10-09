@@ -140,6 +140,7 @@ funciones.sonidos = function () {
                         voz.lang = 'en-US';
                     }
                 }
+                
                 speechSynthesis.speak(voz);
 //            speechSynthesis.getVoices().forEach(function(voice) {
 //                console.log(window.speechSynthesis.getVoices());

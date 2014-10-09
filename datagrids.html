@@ -34,6 +34,8 @@
 
 </head>
 <body class="letrabonita">
+    <!-- onsubmit="return false;"   para que no se recargue la página-->
+
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -49,51 +51,107 @@
 
         <article >
 
-            <header >
-                <div id="infoCarga" style="text-align: center">Please, wait while the game loads...<br><br><br><br><br><br><br>
-                </div>
+            <header>
+                <div id="infoCarga" style="text-align: center">Please, wait while the game loads...</div>
+
 
                 <div class="row" id="opciones">
                     <div class="col-lg-4 col-md-5 col-xs-12" style="padding-top: 8px">
-                        <select class="form-control" id="modo" style="btn-inverse" onchange="datagrids.config().seleccionModo()">
+                        <select class="form-control" id="modo" style="btn-inverse" onchange="datagrids.config().seleccionModo()"> <!-- 1er select -->
                             <option>The worst wrong</option>
                             <option>Wrongs and rights</option>
                             <option>All</option>
                         </select>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-xs-12" style="padding-top: 8px">
-                        <select class="form-control" id="tipoJuego" style="btn-inverse" onchange="datagrids.config().seleccionModo()">
+                    <div class="col-lg-4 col-md-4 col-xs-12" style="padding-top: 8px; padding-bottom: 10px;">
+                        <select class="form-control" id="tipoJuego" style="btn-inverse" onchange="datagrids.config().seleccionModo()"> <!-- 2º select -->
                             <option>Vocabulary</option>
                             <option>Phrases</option>
                         </select>
                     </div>
+                    <div id="playList" style="margin-top: 8px; padding-left: 15px; " ></div>
                 </div>
+               
 
-                <br>
+                
             </header>
             <!-- <footer>
 
             </footer> -->
 
         </article>
-        <div id="midatatable"></div>
-
-        <!-- <table id="mitabla" class="table table-striped table-bordered" cellspacing="0" width="100%">
-            <thead><tr><th>Id</th><th>Nivel</th><th>Lista</th><th>Pregunta</th><th>Respuesta</th></tr></thead>
-            <tbody id="lineasTabla">
 
 
 
-            </tbody>
-        </table> -->
+           
+            <div id="buscadores">
+                <table class="col-md-offset-8 col-xs-offset-1" cellpadding="2" cellspacing="0" border="0" style="width: 80%; max-width:400px; ">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>Regex</th>
+                            <th>Smart</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
+                        <tr id="filter_global">
+                            <td>Global</td>
+                            <td align="center"><input type="text" class="global_filter" id="global_filter"></td>
+                            <td align="center"><input type="checkbox" class="global_filter" id="global_regex" tabindex="-1" ></td>
+                            <td align="center"><input type="checkbox" class="global_filter" id="global_smart" tabindex="-2" checked="checked"></td>
+                        </tr>
+                        <tr id="filter_col1" data-column="1">
+                            <td>Level</td>
+                            <td align="center"><input type="text" class="column_filter" id="col1_filter"></td>
+                            <td align="center"><input type="checkbox" class="column_filter" id="col1_regex" tabindex="-3"></td>
+                            <td align="center"><input type="checkbox" class="column_filter" id="col1_smart" tabindex="-4" checked="checked"></td>
+                        </tr>
+                        <tr id="filter_col2" data-column="2">
+                            <td>List</td>
+                            <td align="center"><input type="text" class="column_filter" id="col2_filter"></td>
+                            <td align="center"><input type="checkbox" class="column_filter" id="col2_regex" tabindex="-5"></td>
+                            <td align="center"><input type="checkbox" class="column_filter" id="col2_smart" tabindex="-6" checked="checked"></td>
+                        </tr>
 
+                    </tbody>
+                </table>
+            </div>
 
-        <!-- <aside>
-            <h3>aside</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
-        </aside> -->
+        
+        
+        <div id="midatatable" ></div>
+        <br><br><br><a href="#" id="addModify" onclick="datagrids.modificaGrid().cambiaVisibilidad()">Add and Modify</a>
+        <div id="boxModificaDataGrid" class="redondeadoPoco">
+            <form id="formularioAddModify"  >
+                <div class="row " >
+                    <div class="col-lg-2 col-md-2 col-xs-6">
+                        <select class="form-control" id="mtipoJuego" style="btn-inverse">
+                            <option>Vocabulary</option>
+                            <option>Phrases</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row " >
+                    <input id="mid" type="number" min="1" max="100000" class="col-xs-3 col-md-1 col-lg-1" placeholder="(Id)" title="To add new lines leave it empty." autocomplete="off" onkeyup="datagrids.modificaGrid().controlaId()"  style="background-color: #ccc" >
+                    <input id="mlevel" type="text" class="col-xs-3 col-md-2 col-lg-1" placeholder="Level" autocomplete="off" required>
+                    <input id="mlist" type="text"  class="col-xs-3  col-md-2 col-lg-1" placeholder="List" autocomplete="off" required>
+                    <input id="mquestion" type="text"  class="col-xs-5  col-md-3 col-lg-4" placeholder="Question" autocomplete="off" required>
+                    <input id="manswer" type="text"  class="col-xs-5  col-md-3 col-lg-4" placeholder="Answer" autocomplete="off" required>
+                </div>
+                <div class="row ">
+                    <input disabled="" class="btn btn-primary" id="manade" type="submit" value="Add"/>
+                    <input disabled="" class="btn btn-primary" id="mdelete"  type="button" value="Delete" onclick="datagrids.modificaGrid().anadeModificaBorra(true)"/>
+                    <button type="reset" class="btn btn-primary" onclick="datagrids.modificaGrid().trasResetear()">Reset</button>
 
+                </div>
+
+            </form>
+        </div>
+
+        <div  id="mmensaje" style=" color:#67b168;  font-weight:bold; font-size:  1.5em;"></div>
+       
 
     </div> <!-- #main -->
 

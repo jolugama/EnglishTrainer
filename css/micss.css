@@ -4,7 +4,7 @@
 
 #miBoton{
     outline: none;
-     border: none;
+    border: none;
 }
 
 
@@ -15,7 +15,7 @@
 
 /* linea par
 tr.even{
-	background-color: #c4e3f3 !important;
+        background-color: #c4e3f3 !important;
 }*/
 /* linea par ordenada
  tr.even td.sorting_1{
@@ -28,27 +28,27 @@ tr.even{
 
 
 
- #mitabla tr.even:hover {
-	background-color: #428bca !important;
-        color:#fff;
+#mitabla tr.even:hover {
+    background-color: #428bca !important;
+    color:#fff;
 }
- #mitabla tr.odd:hover {
-	background-color: #428bca !important;
-        color:#fff;
-}
-
-
- #mitabla tr.even:hover td.sorting_1 {
-	background-color: #428bca !important;
+#mitabla tr.odd:hover {
+    background-color: #428bca !important;
+    color:#fff;
 }
 
 
- #mitabla tr.odd:hover td.sorting_1 {
-	background-color: #428bca !important;
+#mitabla tr.even:hover td.sorting_1 {
+    background-color: #428bca !important;
 }
 
- #mitabla tbody tr.odd:hover, #mitabla tbody tr.odd td.highlighted {
-	background-color: #428bca !important;
+
+#mitabla tr.odd:hover td.sorting_1 {
+    background-color: #428bca !important;
+}
+
+#mitabla tbody tr.odd:hover, #mitabla tbody tr.odd td.highlighted {
+    background-color: #428bca !important;
 }
 
 
@@ -56,4 +56,27 @@ select{
     padding: 0 10px !important;
 }
 
+
+#boxModificaDataGrid{
+
+    background-color: #f0f0f0;
+    padding: 20px;
+    
+
+}
+
+#boxModificaDataGrid input, #boxModificaDataGrid button{
+    margin:5px 0px 0px 5px;
+}
+
+#mtipoJuego{
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+.redondeadoPoco {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+} 
 
