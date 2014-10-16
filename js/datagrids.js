@@ -396,7 +396,7 @@ datagrids.modificaGrid = function () {
             }
         },
         anadeModificaBorra: function (esBorrar) {
-
+            var respuesta = false;
             document.getElementById("manade").disabled = "disabled";
             setTimeout(function () {
                 document.getElementById("manade").disabled = "";
@@ -446,6 +446,7 @@ datagrids.modificaGrid = function () {
                     localStorage.etFrasesIngles = copiaLocalStorage;
                 }
                 $('#mmensaje').html('The row was added successfully.');
+                respuesta=true;
                 setTimeout(function () {
                     $('#mmensaje').html('');
                 }, 5000);
@@ -471,52 +472,61 @@ datagrids.modificaGrid = function () {
                             tablam[i]['P'] = mquestion.toUpperCase();
                             tablam[i]['R'] = manswer.toUpperCase();
                             $('#mmensaje').html('The modification was successful.');
+                            respuesta = true; //aunque esto valga para borrar, indico esto para que luego en el if de respuesta actualice la tabla.
                         } else { //si es borrar
-                            tablam.splice(i, 1);
-                            $('#mdelete').attr('disabled', true);
-                            $('#mmensaje').html('The row was deleted.');
+                            respuesta = confirm("Are you sure?. ID " + tablam[i]['I'] + " will be deleted!");
+                            if (respuesta === true) {
+                                tablam.splice(i, 1);
+                                $('#mdelete').attr('disabled', true);
+                                $('#mmensaje').html('The row was deleted.');
+                                encontrado = true;
+                            }
                         }
 
-                        encontrado = true;
+                        if (respuesta === true) {  //tanto para si se ha modificado o si se borra y se dice si
+                            $('#mid').val('');
+                            $('#mlevel').val('');
+                            $('#mlist').val('');
+                            $('#mquestion').val('');
+                            $('#manswer').val('');
+                            $('#mlevel').focus();
 
-                        $('#mid').val('');
-                        $('#mlevel').val('');
-                        $('#mlist').val('');
-                        $('#mquestion').val('');
-                        $('#manswer').val('');
-                        $('#mlevel').focus();
+                            setTimeout(function () {
+                                $('#mmensaje').html('');
+                            }, 5000);
 
+                            var txt = JSON.stringify(tablam);
 
-                        setTimeout(function () {
-                            $('#mmensaje').html('');
-                        }, 5000);
-//                        var tablaToJson = JSON.parse(tabla);
-                        var txt = JSON.stringify(tablam);
-
-                        if (mtipoJuego === 'vocabulary') {
-                            localStorage.etVocabularioIngles = txt;
-                        } else {
-                            localStorage.etFrasesIngles = txt;
+                            if (mtipoJuego === 'vocabulary') {
+                                localStorage.etVocabularioIngles = txt;
+                            } else {
+                                localStorage.etFrasesIngles = txt;
+                            }
+                            break;
                         }
-                        break;
+
+
                     }
                 }
 
             }
 
-
-            datagrids.modificaGrid().cambiaVisibilidad();
-            document.getElementById('modo').selectedIndex = 2; //cambio a all
-            datagrids.config().seleccionModo() //actualizo pantalla
-
-            setTimeout(function () {
-                $('#col1_filter').val(mlevel).trigger($.Event("keyup", {keyCode: 13}));
-                ;
-                $('#col2_filter').val(mlist).trigger($.Event("keyup", {keyCode: 13}));
-                ;
-                $('#global_filter').focus();
+            if (respuesta === true) {  //si indica si a borrar se actualiza, o si es una modificación
                 datagrids.modificaGrid().cambiaVisibilidad();
-            }, 1500);
+                document.getElementById('modo').selectedIndex = 2; //cambio a all
+                datagrids.config().seleccionModo() //actualizo pantalla
+                setTimeout(function () {
+                    $('#col1_filter').val(mlevel).trigger($.Event("keyup", {keyCode: 13}));
+                    ;
+                    $('#col2_filter').val(mlist).trigger($.Event("keyup", {keyCode: 13}));
+                    ;
+                    $('#global_filter').focus();
+                    datagrids.modificaGrid().cambiaVisibilidad();
+                }, 1500);
+            }
+
+
+
 
 
         },

@@ -49,7 +49,7 @@
 
     <div class="main wrapper clearfix" >
 
-        <article >
+        <article>
 
             <header>
                 <div id="infoCarga" style="text-align: center">Please, wait while the game loads...</div>
@@ -71,9 +71,9 @@
                     </div>
                     <div id="playList" style="margin-top: 8px; padding-left: 15px; " ></div>
                 </div>
-               
 
-                
+
+
             </header>
             <!-- <footer>
 
@@ -83,46 +83,46 @@
 
 
 
-           
-            <div id="buscadores">
-                <table class="col-md-offset-8 col-xs-offset-1" cellpadding="2" cellspacing="0" border="0" style="width: 80%; max-width:400px; ">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>Regex</th>
-                            <th>Smart</th>
-                        </tr>
-                    </thead>
 
-                    <tbody>
-                        <tr id="filter_global">
-                            <td>Global</td>
-                            <td align="center"><input type="text" class="global_filter" id="global_filter"></td>
-                            <td align="center"><input type="checkbox" class="global_filter" id="global_regex" tabindex="-1" ></td>
-                            <td align="center"><input type="checkbox" class="global_filter" id="global_smart" tabindex="-2" checked="checked"></td>
-                        </tr>
-                        <tr id="filter_col1" data-column="1">
-                            <td>Level</td>
-                            <td align="center"><input type="text" class="column_filter" id="col1_filter"></td>
-                            <td align="center"><input type="checkbox" class="column_filter" id="col1_regex" tabindex="-3"></td>
-                            <td align="center"><input type="checkbox" class="column_filter" id="col1_smart" tabindex="-4" checked="checked"></td>
-                        </tr>
-                        <tr id="filter_col2" data-column="2">
-                            <td>List</td>
-                            <td align="center"><input type="text" class="column_filter" id="col2_filter"></td>
-                            <td align="center"><input type="checkbox" class="column_filter" id="col2_regex" tabindex="-5"></td>
-                            <td align="center"><input type="checkbox" class="column_filter" id="col2_smart" tabindex="-6" checked="checked"></td>
-                        </tr>
+        <div id="buscadores">
+            <table class="col-md-offset-8 col-xs-offset-1" cellpadding="2" cellspacing="0" border="0" style="width: 80%; max-width:400px; ">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Regex</th>
+                        <th>Smart</th>
+                    </tr>
+                </thead>
 
-                    </tbody>
-                </table>
-            </div>
+                <tbody>
+                    <tr id="filter_global">
+                        <td>Global</td>
+                        <td align="center"><input type="text" class="global_filter" id="global_filter"></td>
+                        <td align="center"><input type="checkbox" class="global_filter" id="global_regex" tabindex="-1" ></td>
+                        <td align="center"><input type="checkbox" class="global_filter" id="global_smart" tabindex="-2" checked="checked"></td>
+                    </tr>
+                    <tr id="filter_col1" data-column="1">
+                        <td>Level</td>
+                        <td align="center"><input type="text" class="column_filter" id="col1_filter"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col1_regex" tabindex="-3"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col1_smart" tabindex="-4" checked="checked"></td>
+                    </tr>
+                    <tr id="filter_col2" data-column="2">
+                        <td>List</td>
+                        <td align="center"><input type="text" class="column_filter" id="col2_filter"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col2_regex" tabindex="-5"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col2_smart" tabindex="-6" checked="checked"></td>
+                    </tr>
 
-        
-        
+                </tbody>
+            </table>
+        </div>
+
+
+
         <div id="midatatable" ></div>
-        <br><br><br><a href="#" id="addModify" onclick="datagrids.modificaGrid().cambiaVisibilidad()">Add and Modify</a>
+        <br><a href="#" id="addModify" onclick="datagrids.modificaGrid().cambiaVisibilidad()" title="Changes occur only locally. You can add or modify, but only change on your device. Be careful if you delete your cookies !.">Add and Modify</a>
         <div id="boxModificaDataGrid" class="redondeadoPoco">
             <form id="formularioAddModify"  >
                 <div class="row " >
@@ -149,9 +149,9 @@
 
             </form>
         </div>
-
+        <br>
         <div  id="mmensaje" style=" color:#67b168;  font-weight:bold; font-size:  1.5em;"></div>
-       
+        <br><br><br><br><br><br><br>
 
     </div> <!-- #main -->
 

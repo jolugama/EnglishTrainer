@@ -37,7 +37,7 @@ $(window).on('load', function () {
     funciones.sonidos().habla("en", ".");
     funciones.sonidosArray = funciones.array().desordena(funciones.sonidosArray);
 
-    setInterval("game.accion().actualizaErrores()", 1000);
+    setInterval("game.accion().actualizaErrores()", 1000); 
 });
 /**
  * Todo lo relacionado con el inicio de listas, botoneras, etc en el programa

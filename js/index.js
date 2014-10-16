@@ -11,10 +11,14 @@ index.arrayColores = [];
 index.estaCargando = true;
 $(document).ready(function () {
     //Detectar navegador y avisar si no es chrome
-    var esChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
-    if (esChrome) {
-        $('#eschrome').hide();
-    } else {
+    var navegador = navigator.userAgent.toLowerCase()
+    if (navegador.indexOf('chrome') > -1) {  //es chrome
+        $('#quenavegadores').hide();
+    } else if (navegador.indexOf('opera') > -1 || navegador.indexOf('safari') > -1) {  //es opera o safari
+        $('#quenavegadores').html("If you're using Opera and Safary, you can play but not hear the TTS. If you want it to work properly, use CHROME. Thank you. ");
+        setTimeout(function () {
+            $('#quenavegadores').html('<br>');
+        }, 8000);
 
     }
 //websql.realiza().query("DROP TABLE IF EXISTS GAME_REG");
@@ -24,7 +28,7 @@ $(document).ready(function () {
     //websql.realiza().query("DROP TABLE IF EXISTS GAME_FRA_ING");
     websql.realiza().query("CREATE TABLE IF NOT EXISTS GAME_FRA_ING (id INTEGER PRIMARY KEY,tipo TEXT,nivel TEXT,lista TEXT,pregunta TEXT,respuesta TEXT)");
     $('#lateral').hide();
-    $('#lateral').toggle(2500);
+
     $('#miformulario').hide();
 });
 //una vez se carga del todo la página
@@ -51,7 +55,7 @@ $(window).on('load', function () {
     index.accion().estadoSelectTipoJuego();
     $('#infoCarga').hide();
     $('#miformulario').fadeIn(3000);
-
+    $('#lateral').fadeIn(3000);
     index.config().compruebaFelicitaciones();
 
 });
@@ -64,12 +68,10 @@ index.config = function () {
     return{
         compruebaFelicitaciones: function () {
             websql.realiza().transaccionAsync("select count(*) as num from GAME_VOC_ING where lista='FELICITACIONES'", function (datos) {
-
                 if (datos[0].num === 0) {
-                    //se inserta los niveles para estádisticas
+//se inserta los niveles para estádisticas
                     localStorage.etNivelesVocabularioIngles = index.accion().recogeNiveles(index.voc_ingJSON);
                     localStorage.etNivelesFrasesIngles = index.accion().recogeNiveles(index.fra_ingJSON);
-
                     console.log('se inserta felicitaciones felicitaciones');
                     index.accion().inserccion(index.voc_ingJSON, '1', 'FELICITACIONES', function () {
                         console.log('felicitaciones insertadas!');
@@ -111,34 +113,57 @@ index.config = function () {
             }
             var num;
             var randomLista = sessionStorage.etRandomLista;
-            if (randomLista === undefined) {
+            if (randomLista === undefined) {  //si se abre por primera vez el navegador,  se pone a cero la lista
                 randomLista = "";
                 sessionStorage.etRandomLista = randomLista;
             }
 
-            var haSidoJugado = false;
+            var haSidoJugado = false; //valor por defecto
             var listado = [];
-
-
             var juegosJugados = sessionStorage.etRandomLista.split(",");
-            //añado a aray listado todos los juegos jugados de la lista seleccionada
+
+            //añado a array listado todos los juegos jugados de la lista seleccionada
             for (var i = 0; i < juegosJugados.length; i++) {
                 var juego = juegosJugados[i].split("-");
                 if (juego[1] === nivel.value) {
                     listado.push(juego[2]);
                 }
             }
-            _.shuffle(listado);
 
+            //repetir aleatorio mientras:
+            //el elegido sea verde, el num de verdes no sean todos
+            var contador = 0;
             do {
-                num = _.random(0, lista.length - 3);
-                if (_.contains(listado, lista[num].value)) {
-                    haSidoJugado = true;
-                } else {
-                    haSidoJugado = false;
+                //si en n veces no encuentra uno, elige uno cualquiera.
+                //pasa cuando se han jugado a todos los no verdes. se resetea la lista.
+                contador+= 1;
+                if (contador > 20) {
+                    listado="";
+//                    alert('se resetea')
                 }
-            } while (haSidoJugado === true && (listado.length < lista.length - 2));
-            lista.selectedIndex = num; //asigno el numero a la select
+
+                do {
+                    _.shuffle(listado); //desordeno la lista.
+                    num = _.random(0, lista.length - 3); //elijo un random sin contar con wrong y marks
+
+                    if (_.contains(listado, lista[num].value)) {
+                        haSidoJugado = true;
+                    } else {
+                        haSidoJugado = false;
+                    }
+                } while (haSidoJugado === true && (listado.length < lista.length - 2));
+                lista.selectedIndex = num; //asigno el numero a la select
+
+                var color = "SINCOLOR";
+                try {
+                    color = index.arrayColores[num].color;
+                } catch (e) {
+                }
+//                alert("POSICION " + num + " - COLOR " + color)
+
+            } while (index.config().buscarNuevaLista(num) === true);
+
+
 
 
             if (haSidoJugado === false) {
@@ -152,9 +177,39 @@ index.config = function () {
             localStorage.etLista = lista.value; //guardo el valor de la lista en local
 //            console.log(sessionStorage.etRandomLista);
             index.config().botonPlay();
+        },
+        buscarNuevaLista: function (posicion) {
+            var contador = 0;
+            var resultado = false;
+            var color = "indefinido";
+            try {
+                color = index.arrayColores[posicion].color
+
+                if (color !== 'indefinido') {
+                    //recuento numero de verdes
+                    if (index.arrayColores[posicion].color === 'VERDE') {  //si se ha jugado ya, verifico si hay alguna lista no jugada
+                        resultado = true;
+                        for (var j = 0; j < index.arrayColores.length; j++) {
+                            if (index.arrayColores[j].color === 'VERDE') {
+                                contador += 1;
+                            }
+                        }
+                        if ((index.arrayColores.length) === contador) {   //indica que hay tantos verdes como listas. osea, no quedan listas.
+                            resultado = false;
+                        }
+
+                    }
+                }
+            } catch (e) {
+                resultado = false;
+            }
+            return resultado;
+
         }
+
     };
 };
+
 index.accion = function () {
     return{
         //segun se cambie la select podrá ser Vocabulary o Phrases
@@ -163,13 +218,8 @@ index.accion = function () {
                 document.getElementById('tipoJuego').selectedIndex = 0;
             }
             var tipoJuego = document.getElementById("tipoJuego").value;
-
             localStorage.etTipoJuego = document.getElementById("tipoJuego").value;
-
-
             index.accion().rellenaSelectNivel(tipoJuego);
-
-
         },
         rellenaSelectNivel: function (tipoJ) {
             //meto en un array los niveles
@@ -212,7 +262,6 @@ index.accion = function () {
                 localStorage.etNivel = document.getElementById("selectNivel").value;
             }
             index.accion().coloresLista();
-
         },
         borraOptionLista: function (nombreid) {
             //borro options anteriores y creo los actuales.
@@ -253,16 +302,16 @@ index.accion = function () {
                 var opcion = new Option(miarray[x], miarray[x]);
                 for (var j = 0; j < index.arrayColores.length; j++) {
                     // console.log(index.arrayColores[j])
-                    if (index.arrayColores[j].lista == miarray[x]) {
-                        if (index.arrayColores[j].color === 'ROJO') {
+                    if (index.arrayColores[j].lista === miarray[x]) {
+                        if (index.arrayColores[j].color === 'ROJO') {  //hay fallos
                             opcion.style.color = "white";
                             opcion.style.backgroundColor = "#FF4000";
-                        } else if (index.arrayColores[j].color === 'VERDE') {
+                        } else if (index.arrayColores[j].color === 'VERDE') {  //todas bien
                             //opcion.style.color = "black";
                             opcion.style.backgroundColor = "#9FF781";
-                        } else if (index.arrayColores[j].color === 'NEGRO') {
+                        } else if (index.arrayColores[j].color === 'NEGRO') {  //se ha dado a play y luego cerrado, sin fallos y sin aciertos.
                             //opcion.style.color = "white";
-                            opcion.style.backgroundColor = "orange";
+                            opcion.style.backgroundColor = "orange"; //se elige en vista el color naranja para mejorar el aspecto.
                         }
 
                     }
@@ -309,7 +358,7 @@ index.accion = function () {
                     tabla = "GAME_FRA_ING";
                     tipojuego = "p";
                 }
-                index.accion().rellenaSelectLista();
+                //index.accion().rellenaSelectLista();
                 var consul = " select lista,case when pts>0 then 'VERDE' WHEN pts<0 then 'ROJO' ELSE 'NEGRO' END AS color from "
                         + " (select distinct lista,min(puntuacion) as pts from "
                         + " (SELECT " + tabla + ".NIVEL,lista,case when ifnull(correcto,0)- ifnull(erroneo,0)=0 and ifnull(erroneo,0)!=0 then -1 else ifnull(correcto,0)- ifnull(erroneo,0) end as puntuacion FROM " + tabla + "  "
@@ -354,7 +403,6 @@ index.accion = function () {
             }
             niveles = funciones.array().ordenayUnicos(niveles);
             return niveles.join(',');
-
         }
 
     };
